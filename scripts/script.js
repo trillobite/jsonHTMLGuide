@@ -42,23 +42,23 @@ var project = {
 	    });
 	    return dfd.promise;
     },
-    renderBody: function(data) {
-    	return $jConstruct('div', {
-    		text: data,
-    	});
-    },
-	render: function() {
-		return $jConstruct('div', {
-			id: 'docBody',
-			text: '<h1>jsonHTML</h1>',
-			
-		});
-	},
 };
 
 $(document).ready(function() {
-	var main = project.render();
-	project.getData('overview.txt').done(function(data) {
-		main.addChild(project.renderBody(data)).appendTo('body');
+	var main = $jConstruct('div', {
+		id: 'docBody',
+		text: '<h1>jsonHTML</h1>',
+	});
+	
+	project.getData('overview.txt')().done(function(data) {
+	    data = data.replace(/(\r\n|\n|\r)/gm, '</p><p>');
+	    data = '<p>' + data + '</p>';
+	    console.log(data);
+	    main.addChild($jConstruct('div', {
+	        class: 'textLeft',
+	        text: data,
+	    }));
+	    console.log(main);
+	    main.appendTo('body');
 	});
 });
