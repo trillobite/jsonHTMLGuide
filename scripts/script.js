@@ -13,6 +13,20 @@ var templates = {
         id: 'docBody',
         text: '<h1>jsonHTML</h1>',
     }),
+    
+    navigation: function() {
+        return $jConstruct('div', {
+            id: 'nav',
+            text: '<h3>Navigation</h3>',
+        });
+    },
+    
+    container: function() {
+        return $jConstruct('div', {
+            id: 'container',
+            class: 'center',
+        });
+    },
 };
 
 var project = {
@@ -31,9 +45,13 @@ var project = {
 };
 
 $(document).ready(function() {
+    var container = templates.container();
 	var main = templates.docBody;
 	project.getData('overview.txt')().done(function(data) {
 	    main.addChild(templates.textDiv(data, 'textField'));
-	    main.appendTo('body');
+	    container.addChild(main);
+	    container.addChild(templates.navigation());
+	    container.appendTo('body');
 	});
+	
 });
