@@ -35,30 +35,30 @@ var templates = {
 };
 
 var project = {
-	stuff: function(id) {
-	    $.get('overview.txt', function(data) {
-	    	console.log(data);
+	getData: function(fileName) {
+		var dfd = new $.Deferred();
+	    $.get(fileName, function(data) {
+	    	dfd.resolve(data);
 	    });
+	    return dfd.promise;
+    },
+    renderBody: function(data) {
+    	return $jConstruct('div', {
+    		text: data,
+    	});
     },
 	render: function() {
 		return $jConstruct('div', {
 			id: 'docBody',
 			text: '<h1>jsonHTML</h1>',
 			
-		}).addChild(templates.fileToHTML('scripts/text/overview.txt', 'test')).appendTo('body');
+		});
 	},
 };
 
 $(document).ready(function() {
-	project.render();
-	/*while (strRawContents.indexOf('\r') >= 0) {
-		strRawContents = strRawContents.replace('\r', '');
-	}
-	var arrLines = strRawContents.split('\n');
-	alert('file ' + oFrame.src + ' has ' + arrLines.length + ' lines');
-	for (var i = 0; i < arrLines.length; ++i) {
-		var curLine = arrLines[i];
-		console.log('line #' + (i + 1) + ' is: "' + curLine + '"');
-	}*/
-	//templates.overviewFile().appendTo('body');
+	var main = project.render();
+	project.getData('overview.txt').done(function(data) {
+		main.addChild(project.renderBody(data)).appendTo('body');
+	});
 });
