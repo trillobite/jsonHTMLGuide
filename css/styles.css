@@ -4,7 +4,7 @@
 	background: white;
 	border-radius: 10px;
 	font-family: 'Open Sans', sans-serif;
-	color: #615F5E;
+	color: #262626;
 	text-align: center;
 	width: 600px; /* Make sure any resolution can display it */
 	/*margin: 0 auto;*/ /* Center it */
@@ -17,7 +17,7 @@
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     width: 200px;
-    height: 400px;
+    height: 500px;
     background: white;
     border-radius: 10px;
     float: left;
@@ -34,17 +34,33 @@ h1, h2, h3, h4, h5, h6 {
 	color: #609433;
 }
 
-pre {
+xmp {
+    /*color: #615f5e;*/
+    overflow: auto;
+    background-color: #d7d7d6;
+    border-radius: 5px;
+}
+
+/*pre {
 	padding: 16px;
 	overflow: auto;
 	border-radius: 3px;
 	width: auto;
 	height: auto;
-}
+}*/
 
 .center {
     margin: 0 auto;
     width: 800px;
+}
+
+.navigationButton {
+    color: #6bb245;
+    cursor: pointer;
+}
+
+.navigationButton:hover {
+    background-color: #d7d7d6;
 }
 
 .textRight {

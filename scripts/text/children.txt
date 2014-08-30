@@ -1,0 +1,57 @@
+Now that we have covered the very basic div object manipulations, typically HTML includes child objects, and jsonHTML does not only work with div's but also the basic html objects: textboxes, checkboxes, buttons, etc... (full list coming soon). To add a child object, you can either create a new variable holding the child object to add later, or you can directly create the new child object using $jConstructor directly in the parent object:
+
+<xmp>
+    //Creating child object as a seperate var, may be more intuitive:
+    var childTextBox = $jConstruct('textbox', {
+        text: 'it is amazing!',
+    }).css({
+        'color': 'purple',
+    });
+
+    //Then add the child to the parent object.
+    helloDiv.addChild(childTextBox);
+</xmp>
+
+You can even add the child object upon creation of the parent object, making more compact simple code:
+
+<xmp>
+    //Creating child object as a seperate var, may be more intuitive:
+    var childTextBox = $jConstruct('textbox', {
+        text: 'it is amazing!',
+    }).css({
+        'color': 'purple',
+    });
+
+    //Creating the parent object.
+    var helloDiv = $jConstruct('div', {
+        text: 'Hello World',
+    }).textProperties('heading', '2').textProperties('bold').css({
+        'color': 'purple',
+    }).addChild(childTextBox);
+</xmp>
+
+Here is the completed code to your first hello world code example!
+
+<xmp>
+    //Creating child object as a seperate var, may be more intuitive:
+    var childTextBox = $jConstruct('textbox', {
+        text: 'it is amazing!',
+    }).css({
+        'color': 'purple',
+    });
+
+    //Creating the parent object.
+    var helloDiv = $jConstruct('div', {
+        text: 'Hello World',
+    }).textProperties('heading', '2').textProperties('bold').css({
+        'color': 'purple',
+    }).addChild(childTextBox);      
+
+    //first we want to wait until the DOM is finished rendering, we can use jQuery to do this.
+    $(document).ready(function() {
+        //now lets append helloDiv to the root div.
+        helloDiv.appendTo('body');
+    });
+</xmp>
+
+Just remember, that despite the fact that jsonHTML will allow you to add a child object to any object, typically in HTML, a textbox or a button do not have child objects. So if you try to add a child object to a traditional HTML object, there may be some very interesting bugs produced when you render it. For example, you can have a Div inside a Div, but you cannot have a Div inside a button, depending on the browser, it may render that code error in strange unexpected ways, so keep that in mind.

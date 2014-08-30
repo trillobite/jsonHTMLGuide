@@ -1,0 +1,1 @@
+<a href="https://github.com/trillobite/jsonHTML/releases/tag/v0.9-beta">Click to download and enjoy the fun!</a>
