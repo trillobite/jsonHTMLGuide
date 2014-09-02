@@ -59,11 +59,13 @@ var templates = {
         //makes sure the nav keeps track of where it's at!
         $.each(navObjects, function(indx, obj) { 
             obj.event('click', function() {
-                $('.navigationButton').each(function() {
-                    this.style['background-color'] = 'white'; //These are not the active ones.
+                $.each(navObjects, function(indx2, obj2) {
+                    obj2.css({
+                        'background-color': 'white',
+                    });
                 });
-                $('#'+obj.id).css({
-                    'background-color': '#d7d7d6', //This one is the active one, hilight it.
+                obj.css({
+                    'background-color': '#d7d7d6',
                 });
             })
             navigation.addChild(obj);

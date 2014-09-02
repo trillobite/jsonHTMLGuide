@@ -1,7 +1,17 @@
 <h3>Experimental Exploits</h3>
-Any experienced programmer will know that jsonHTML in it's current state cannot do everything. Luckily for you, the "Keep it black" philosophy kept me from adding too many abstraction layers, and you can still get down and dirty within jsonHTML. If you use jsonHTML all on its own, you can get pretty far, but there needs to be a way for you to get down deep into your objects and manipulate them. The easiest way to do this, is by adding functions that will be executed after your object is rendered on the DOM. You can add these functions with "helloDiv.addFunction(function() { myFunctionToExecute(); });" You may have noticed, that this property was utilized in the earlier code example under event handling! The bonus with this, is that you are currently still within your jsonHTML object, and can grab its properties directly, before the V8 engine garbege collects it.
+Any experienced programmer will know that jsonHTML in it's current state cannot do everything. 
+Luckily for you, the "Keep it black" philosophy kept me from adding too many abstraction layers, 
+and you can still get down and dirty within jsonHTML. If you use jsonHTML all on its own, you 
+can get pretty far, but there needs to be a way for you to get down deep into your objects and 
+manipulate them. The easiest way to do this, is by adding functions that will be executed after 
+your object is rendered on the DOM. You can add these functions with 
+"helloDiv.addFunction(function() { myFunctionToExecute(); });" You may have noticed, that this 
+property was utilized in the earlier code example under event handling! The bonus with this, 
+is that you are currently still within your jsonHTML object, and can grab its properties directly, 
+before the V8 engine garbege collects it.
 <br></br>
-I will leave it up to you to figure out what you want to do with this functionality, but here is a basic example to quench your curiosity:
+I will leave it up to you to figure out what you want to do with this functionality, but here 
+is a basic example to quench your curiosity:
 
 <xmp>
     var helloDiv = $jConstruct('div', {
@@ -11,7 +21,11 @@ I will leave it up to you to figure out what you want to do with this functional
     });
 </xmp>
 
-Another limitation with jsonHTML is the fact that the appendHTML function deep inside does not recognize more than the few very basic HTML objects. One solution that I have implemented, which is experimental, but I left just in case I required extended functionality, is the "html" object. You can pass in directly, raw html written by hand as strings, to create HTML objects in which you can manipulate while still within the syntax of jsonHTML.
+Another limitation with jsonHTML is the fact that the appendHTML function deep inside does not 
+recognize more than the few very basic HTML objects. One solution that I have implemented, which 
+is experimental, but I left just in case I required extended functionality, is the "html" object. 
+You can pass in directly, raw html written by hand as strings, to create HTML objects in which you 
+can manipulate while still within the syntax of jsonHTML.
 <br></br>
 An untested experimental example of this functionality:
 
@@ -25,4 +39,25 @@ An untested experimental example of this functionality:
     helloDiv.appendTo('body');
 </xmp>
 
-If you really want to dig deep into jsonHTML, and mess with it's inner workings, check out the jsonHTML v0.2 style, you can still write in this style with v0.7+. Basically, your using jsonHTML without touching the $jConstructor, giving you lower level access to everything whenever required.
+<f>v0.9.5</f> (soon to be released)
+jsonHTML now supports a nearly infinate number of objects! There is a new interesting feature
+that turned out to be awesome for the "Keep It Black" philosophy, it turns out with a few 
+javaScript techniques, you can attempt to have it make objects that it normally would not support.
+The funny thing is, after this discovery, jsonHTML actually decreased in code size just a bit!
+<br></br>
+For instance, take a look at this html:
+<xmp>
+    <input type="submit" value="Submit">
+</xmp>
+In jsonHTML:
+<xmp>
+    $jConstruct('input', {
+        type: 'submit',
+        value: 'Submit',
+    });
+</xmp>
+
+<br></br>
+If you really want to dig deep into jsonHTML, and mess with it's inner workings, check out the 
+jsonHTML v0.2 style, you can still write in this style with v0.7+. Basically, your using jsonHTML 
+without touching the $jConstructor, giving you lower level access to everything whenever required.

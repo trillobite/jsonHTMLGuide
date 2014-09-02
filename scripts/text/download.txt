@@ -1,2 +1,6 @@
 <h3>Download!</h3>
+This entire guide was written using jsonHTML! Never under estimate its power, I cannot wait to see what things you build, 
+what cultures you spread, when you become an expert. Even jsonHTML's creator does not even know all the things it can do, 
+so have fun, and create!
+<br></br>
 <a href="https://github.com/trillobite/jsonHTML/releases/tag/v0.9-beta">Click to download and enjoy the fun!</a>
