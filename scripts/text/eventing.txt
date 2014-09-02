@@ -1,3 +1,4 @@
+<h3>Adding Events</h3>
 There are two basic ways of implementing events in jsonHTML, one way, is to get the id and do your standard jQuery "$('#'+obj.id).click(function());" or you can implement the built in functionality which is typically easier to remember, and is more legible when code gets large and complex "myDivObj.event('click', function(){});" Either way works, it really depends on user preference.
 <br></br>
 Example using the more standard jQuery method:

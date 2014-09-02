@@ -1,3 +1,4 @@
+<h3>The Basics</h3>
 First of all, you will still need to write a little bit of HTML to get started, you can utilize an existing web project, but for simplicity it's best to practice on a clean slate.
 
 <xmp>

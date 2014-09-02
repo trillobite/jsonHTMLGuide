@@ -41,6 +41,14 @@ xmp {
     border-radius: 5px;
 }
 
+f { /*f is short for focus*/
+    color: #CC6600;
+}
+
+q { /*q is short for question*/
+	color: #609433;
+}
+
 /*pre {
 	padding: 16px;
 	overflow: auto;

@@ -1,3 +1,4 @@
+<h3>Refreshing Your Objects</h3>
 One thing that you may have noticed already with the above code example, is that it is not entirely legible. It occured to me one evening: Would if I could change the property of the object and make it take the changes immediately. Despite this not being currently possible with my current knowledge, I found out I could do something similar, and the refresh function was born! Basically, when you refresh a jsonHTML object, it renders that object again to make sure it has the latest properties, by physically removing the object and adding it again, new.
 
 <xmp>

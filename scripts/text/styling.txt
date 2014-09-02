@@ -1,3 +1,4 @@
+<h3>Styling Objects</h3>
 Would if, I wanted "Hello World" to be a heading, and bold? jsonHTML has the ability to do this very simply with function chaining. Lets rewrite helloDiv so it's a bit more simple and looks more awesome.
 
 <xmp>

@@ -1,3 +1,4 @@
+<h3>Adding Child Objects</h3>
 Now that we have covered the very basic div object manipulations, typically HTML includes child objects, and jsonHTML does not only work with div's but also the basic html objects: textboxes, checkboxes, buttons, etc... (full list coming soon). To add a child object, you can either create a new variable holding the child object to add later, or you can directly create the new child object using $jConstructor directly in the parent object:
 
 <xmp>

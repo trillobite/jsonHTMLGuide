@@ -1,3 +1,4 @@
+<h3>Appending Objects</h3>
 Cool! You made a div that will say Hello World, but if you run this right now, you wont see anything, because the html output has not been appended to any container, so we need to write code to do that.
 
 <xmp>
