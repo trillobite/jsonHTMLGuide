@@ -32,6 +32,11 @@
     /*margin-right: 10px;*/
 }
 
+#textField {
+    /*border-radius: 10px;*/
+    border-top: 2px dotted #808080;
+}
+
 body {
 	background: url('images/congruent_outline.png') repeat top center fixed;
 	
