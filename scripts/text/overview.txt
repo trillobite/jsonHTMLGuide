@@ -5,7 +5,8 @@ it's not exactly a compiler, it's not exactly a library, so now you see why it's
 so incredibly difficult to describe! I can tell you what it does, and how it is 
 within purgatory, unable to be classified under any type of project, if anything,
 you can say that it is a Language, a Compiler, and a code library at 17KB, all at
-the same time!
+the same time! By the way, you are looking at it right now, this web page was developed
+using jsonHTML.
 <br><br/>
 
 <q>Why was it created?</q> I created jsonHTML for a project at my work, we needed a web

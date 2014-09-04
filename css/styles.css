@@ -13,14 +13,22 @@
 	float: left;
 }
 
+#box {
+    float: left;
+    width: 199px;
+}
+
 #nav {
+    position: fixed;
+    /*right: 5%;*/
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-    width: 200px;
+    width: 199px;
     height: 500px;
     background: white;
     border-radius: 10px;
     float: left;
+    border-left: 1px dotted #808080;
     /*margin-right: 10px;*/
 }
 

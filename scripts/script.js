@@ -12,7 +12,7 @@ var templates = {
     //Holds everything except the NAV... I think...
     docBody: $jConstruct('div', {
         id: 'docBody',
-        text: '<h1>jsonHTML</h1>',
+        text: '<h5>Welcome to,</h5><h1>The jsonHTML Guide</h1>',
     }),
     
     navigation: function(tutorialBody) {
@@ -50,6 +50,11 @@ var templates = {
             link('Download jsonHTML', 'download.txt'),
         ];
         
+        //keeps the nav window contained and happy.
+        var floatContainer = $jConstruct('div', {
+            id: 'box',
+        });
+        
         //Main div for the Navigation menu.
         var navigation = $jConstruct('div', {
             id: 'nav',
@@ -71,7 +76,8 @@ var templates = {
             navigation.addChild(obj);
         });
         
-        return navigation;
+        floatContainer.addChild(navigation);
+        return floatContainer;
     },
     
     //Everything should be contained in this.
