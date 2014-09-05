@@ -1,39 +1,49 @@
+<hr class="style-eight"></hr>
 <h3>Styling Objects</h3>
 Would if, I wanted "Hello World" to be a heading, and bold? jsonHTML has the ability to do this very simply with function chaining. Lets rewrite helloDiv so it's a bit more simple and looks more awesome.
 
-<xmp>
-    var helloDiv = $jConstruct('div', {
-        text: 'Hello World',
-    }).textProperties('heading', '2').textProperties('bold');
-</xmp>
+<div class="codeBox">
+    <xmp>
+        var helloDiv = $jConstruct('div', {
+            text: 'Hello World',
+        }).textProperties('heading', '2').textProperties('bold');
+    </xmp>
+</div>
 
+<br></br>
 Notice how in order to make the heading size change, I manually input the number, so it will output 'h2' tags around the text. What's nice is if, I want the text to be a different color, I can simply set styling to the object using function chaining.
 <br></br>
 Here's the same object, and setting css (styling) to it:
 
-<xmp>
-    var helloDiv = $jConstruct('div', {
-        text: 'Hello World',
-    }).textProperties('heading', '2').textProperties('bold').css({
-        'color': 'purple',
-    });
-</xmp>
+<div class="codeBox">
+    <xmp>
+        var helloDiv = $jConstruct('div', {
+            text: 'Hello World',
+        }).textProperties('heading', '2').textProperties('bold').css({
+            'color': 'purple',
+        });
+    </xmp>
+</div>
 
+<br></br>
 Your Completed code should now look like this:
 
-<xmp>
-    //lets make a div that says hello world!
-    var helloDiv = $jConstruct('div', {
-        text: 'Hello World',
-    }).textProperties('heading', '2').textProperties('bold').css({
-        'color': 'purple', //changes color of text, all the same stuff as real CSS.
-    });         
+<div class="codeBox">
+    <xmp>
+        //lets make a div that says hello world!
+        var helloDiv = $jConstruct('div', {
+            text: 'Hello World',
+        }).textProperties('heading', '2').textProperties('bold').css({
+            'color': 'purple', //changes color of text, all the same stuff as real CSS.
+        });         
+    
+        //We want to wait until the DOM is finished rendering, we can use jQuery to do this.
+        $(document).ready(function() {
+            //now lets append helloDiv to the root div.
+            helloDiv.appendTo('body');
+        });
+    </xmp>
+</div>
 
-    //We want to wait until the DOM is finished rendering, we can use jQuery to do this.
-    $(document).ready(function() {
-        //now lets append helloDiv to the root div.
-        helloDiv.appendTo('body');
-    });
-</xmp>
-
+<br></br>
 Neat right? As you can see, any styling you can set using jQuery, you can utilize here, basically '.css()' is just a shortcut to jQuery, it plugs it right in.

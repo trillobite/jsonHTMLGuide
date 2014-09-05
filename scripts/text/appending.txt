@@ -1,28 +1,35 @@
+<hr class="style-eight"></hr>
 <h3>Appending Objects</h3>
 Cool! You made a div that will say Hello World, but if you run this right now, you wont see anything, because the html output has not been appended to any container, so we need to write code to do that.
 
-<xmp>
-    //first we want to wait until the DOM is finished rendering, we can use jQuery to do this.
-    $(document).ready(function() {
-        //now lets append helloDiv to the root div.
-        helloDiv.appendTo('body');
-    });
-</xmp>
+<div class="codeBox">
+    <xmp>
+        //first we want to wait until the DOM is finished rendering, we can use jQuery to do this.
+        $(document).ready(function() {
+            //now lets append helloDiv to the root div.
+            helloDiv.appendTo('body');
+        });
+    </xmp>
+</div>
 
+<br></br>
 The code so far between the script tags should look like this:
 
-<xmp>
-    //lets make a div that says hello world!
-    var helloDiv = $jConstruct('div');
-    helloDiv.text = 'Hello World';
+<div class="codeBox">
+    <xmp>
+        //lets make a div that says hello world!
+        var helloDiv = $jConstruct('div');
+        helloDiv.text = 'Hello World';
+    
+        //first we want to wait until the DOM is finished rendering, we can use jQuery to do this.
+        $(document).ready(function() {
+            //now lets append helloDiv to the root div.
+            helloDiv.appendTo('body');
+        });
+    </xmp>
+</div>
 
-    //first we want to wait until the DOM is finished rendering, we can use jQuery to do this.
-    $(document).ready(function() {
-        //now lets append helloDiv to the root div.
-        helloDiv.appendTo('body');
-    });
-</xmp>
-
+<br></br>
 Now, When you reload the page, it should be rendered on the DOM, and you can even hit "inspect element" in your browser, and you can view the HTML which was appended to the specified HTML container, in this case the "body" of the DOM. Notice how, every object you create with jsonHTML has a random character string as an ID. This random ID is created if you don't specify one yourself, in order for jsonHTML to manage appends in it's internal workings, add flexibility, and decrease code complexity so others can view and understand your code better. It is not known if having lots of ID's decreases performance in page rendering, but so far, even big web applications don't appear to mind.
 <br></br>
 Now that you made your first helloWorld page with jsonHTML, we can begin with doing some tad bit more crazy, and mind bending stuff, But first, lets cover the basic HTML styling which is typically done naturally.

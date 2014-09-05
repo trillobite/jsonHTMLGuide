@@ -1,3 +1,4 @@
+<hr class="style-eight"></hr>
 <h3>Introduction</h3>
 <q>What is it?</q> Well, in order for me to explain that to you, I must first tell you
 what it's not. jsonHTML is not a performance enhancer, it's not exactly a language,
@@ -29,8 +30,8 @@ is put into memory, parsed, or executed, the remaining JSON is compiled down to
 is one reason jsonHTML's syntax is strikingly similar to jQuery, this prevents
 confusion and simplifies things for the programmer.
 <br><br/>
-
-Before this, to achieve the flexibility required for my projects, I had to write 
+<hr class="style-eight"></hr>
+Before jsonHTML, to achieve the flexibility required for my projects, I had to write 
 out the HTML as a string, and use jQuery to add them or manipulate them by parsing 
 that string. This was tedious, especially compared to manipulating JSON objects as 
 an abstraction layer. Basically put, by creating a JSON object to reflect what you 

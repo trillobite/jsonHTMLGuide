@@ -1,3 +1,4 @@
+<hr class="style-eight"></hr>
 <h3>Experimental Exploits</h3>
 Any experienced programmer will know that jsonHTML in it's current state cannot do everything. 
 Luckily for you, the "Keep it black" philosophy kept me from adding too many abstraction layers, 
@@ -13,14 +14,17 @@ before the V8 engine garbege collects it.
 I will leave it up to you to figure out what you want to do with this functionality, but here 
 is a basic example to quench your curiosity:
 
-<xmp>
-    var helloDiv = $jConstruct('div', {
-        text: 'Hello World',
-    }).addFunction(function() {
-        console.log('this was executed after helloDiv was rendered, cool right?!');
-    });
-</xmp>
+<div class="codeBox">
+    <xmp>
+        var helloDiv = $jConstruct('div', {
+            text: 'Hello World',
+        }).addFunction(function() {
+            console.log('this was executed after helloDiv was rendered, cool right?!');
+        });
+    </xmp>
+</div>
 
+<br></br>
 Another limitation with jsonHTML is the fact that the appendHTML function deep inside does not 
 recognize more than the few very basic HTML objects. One solution that I have implemented, which 
 is experimental, but I left just in case I required extended functionality, is the "html" object. 
@@ -29,15 +33,20 @@ can manipulate while still within the syntax of jsonHTML.
 <br></br>
 An untested experimental example of this functionality:
 
-<xmp>
-    var helloDiv = $jConstruct('html', {
-        data: '<textarea id="helloWorldStuff">Hello World</textarea>', //custom html that will be appeneded to the DOM.
-    }).addFunction(function() {
-        console.log('this is experimental, you should see "Hello World" on the screen though');
-    });
+<div class="codeBox">
+    <xmp>
+        var helloDiv = $jConstruct('html', {
+            data: '<textarea id="helloWorldStuff">Hello World</textarea>', //custom html that will be appeneded to the DOM.
+        }).addFunction(function() {
+            console.log('this is experimental, you should see "Hello World" on the screen though');
+        });
+    
+        helloDiv.appendTo('body');
+    </xmp>
+</div>
 
-    helloDiv.appendTo('body');
-</xmp>
+<br></br>
+<hr class="style-eight"></hr>
 
 <f>v0.9.5</f> (soon to be released)
 jsonHTML now supports a nearly infinate number of objects! There is a new interesting feature
@@ -46,16 +55,23 @@ javaScript techniques, you can attempt to have it make objects that it normally 
 The funny thing is, after this discovery, jsonHTML actually decreased in code size just a bit!
 <br></br>
 For instance, take a look at this html:
-<xmp>
-    <input type="submit" value="Submit">
-</xmp>
+
+<div class="codeBox">
+    <xmp>
+        <input type="submit" value="Submit">
+    </xmp>
+</div>
+
 In jsonHTML:
-<xmp>
-    $jConstruct('input', {
-        type: 'submit',
-        value: 'Submit',
-    });
-</xmp>
+
+<div class="codeBox">
+    <xmp>
+        $jConstruct('input', {
+            type: 'submit',
+            value: 'Submit',
+        });
+    </xmp>
+</div>
 
 <br></br>
 If you really want to dig deep into jsonHTML, and mess with it's inner workings, check out the 

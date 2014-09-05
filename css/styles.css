@@ -23,7 +23,7 @@
     /*right: 5%;*/
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-    width: 199px;
+    width: 198px;
     height: 500px;
     background: white;
     border-radius: 10px;
@@ -34,7 +34,7 @@
 
 #textField {
     /*border-radius: 10px;*/
-    border-top: 2px dotted #808080;
+    /*border-top: 2px dotted #808080;*/
 }
 
 body {
@@ -47,15 +47,33 @@ h1, h2, h3, h4, h5, h6 {
 	color: #609433;
 }
 
-xmp {
-    /*color: #615f5e;*/
+/*xmp {
+    width: 100%;
     overflow: auto;
     background-color: #d7d7d6;
     border-radius: 5px;
-}
+}*/
 
 f { /*f is short for focus*/
     color: #CC6600;
+}
+
+/* Glyph, by Harry Roberts */
+hr.style-eight {
+    padding: 0;
+    border: none;
+    border-top: medium double #d7d7d6;
+    color: #d7d7d6;
+    text-align: center;
+}
+hr.style-eight:after {
+    content: "§";
+    display: inline-block;
+    position: relative; 
+    top: -0.7em;  
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
 }
 
 q { /*q is short for question*/
@@ -73,6 +91,18 @@ q { /*q is short for question*/
 .center {
     margin: 0 auto;
     width: 800px;
+}
+
+.codeBox {
+    width: 100%;
+    overflow: auto;
+    background-color: #d7d7d7;
+    border-radius: 5px;
+}
+
+.OverflowAuto { /*Used so that the xmp's will overflow properly in IE*/
+    width: 100%;
+    overflow: auto;
 }
 
 .navigationButton {

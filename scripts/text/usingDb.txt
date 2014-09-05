@@ -1,3 +1,4 @@
+<hr class="style-eight"></hr>
 <h3>Utilizing Your Database</h3>
 So, you may still be sitting here and wondering what the practical use of jsonHTML really is, why compile down to HTML, when you can just write it by hand? You must remember, javaScript has some powerful tools, that are contained in every programming language and one of the most powerful are loops. What??? Your wondering why loops are so awesome??? If you must ask, I will explain!
 <br></br>
@@ -5,7 +6,56 @@ First of all, lets say you have a database full of data. When you pulled data fr
 <br></br>
 For the sake of simplicity of this example, lets say the data which came back from your database is already in JSON format:
 
-<xmp>
+<div class="codeBox">
+    <xmp>
+        //the data which came back from the database.
+        var dbData = [ 
+            {
+                Name: 'jaunty',
+                Description: 'jaunty loves apples!',
+            }, 
+            {
+                Name: 'bob',
+                Description: 'Likes to skateboard',
+            },
+            {
+                Name: 'joseph',
+                Description: 'Likes to watch movies',
+            }
+        ];
+    </xmp>
+</div>
+
+Now, lets say we want to reflect that data, each object as an individual div on the DOM:
+
+<div class="codeBox">
+    <xmp>
+    //I need to loop through the returned data from the database:
+    $.each(dbData, function(indx, data) {
+        //I believe I want the description to be in it's own div in an html paragraph, this will be a child object.
+        var childDescript = $jConstruct('div', {
+            text: data.Description,
+        }).textProperties('paragraph').css({
+            'margin': '0 auto', //I want it to be centered in the parent div.
+        });
+    
+        //now I need to create the parent Div that will hold the 'Name.'
+        $jConstruct('div', {
+            class: 'defaultClass',
+            text: data.Name,
+        }).css({
+            'text-align': 'center',
+            'border': '1px solid black',
+            'border-radius': '15px', //I want the border to look pretty!
+        }).addChild(childDescript).appendTo('body'); //add the child object and append it to the root div of the DOM.
+    });
+    </xmp>
+</div>
+
+Here is what the code should look like between your script tags:
+
+<div class="codeBox">
+    <xmp>
     //the data which came back from the database.
     var dbData = [ 
         {
@@ -21,75 +71,32 @@ For the sake of simplicity of this example, lets say the data which came back fr
             Description: 'Likes to watch movies',
         }
     ];
-</xmp>
-
-Now, lets say we want to reflect that data, each object as an individual div on the DOM:
-
-<xmp>
-//I need to loop through the returned data from the database:
-$.each(dbData, function(indx, data) {
-    //I believe I want the description to be in it's own div in an html paragraph, this will be a child object.
-    var childDescript = $jConstruct('div', {
-        text: data.Description,
-    }).textProperties('paragraph').css({
-        'margin': '0 auto', //I want it to be centered in the parent div.
-    });
-
-    //now I need to create the parent Div that will hold the 'Name.'
-    $jConstruct('div', {
-        class: 'defaultClass',
-        text: data.Name,
-    }).css({
-        'text-align': 'center',
-        'border': '1px solid black',
-        'border-radius': '15px', //I want the border to look pretty!
-    }).addChild(childDescript).appendTo('body'); //add the child object and append it to the root div of the DOM.
-});
-</xmp>
-
-Here is what the code should look like between your script tags:
-
-<xmp>
-//the data which came back from the database.
-var dbData = [ 
-    {
-        Name: 'jaunty',
-        Description: 'jaunty loves apples!',
-    }, 
-    {
-        Name: 'bob',
-        Description: 'Likes to skateboard',
-    },
-    {
-        Name: 'joseph',
-        Description: 'Likes to watch movies',
-    }
-];
-
-//you have to wrap it in a .ready in order for the browser to know when to begin executing.
-$(document).ready(function() {
-    //I need to loop through the returned data from the database:
-    $.each(dbData, function(indx, data) {
-        //I believe I want the description to be in it's own div in an html paragraph, this will be a child object.
-        var childDescript = $jConstruct('div', {
-            text: data.Description,
-        }).textProperties('paragraph').css({
-            'margin': '0 auto', //I want it to be centered in the parent div.
+    
+    //you have to wrap it in a .ready in order for the browser to know when to begin executing.
+    $(document).ready(function() {
+        //I need to loop through the returned data from the database:
+        $.each(dbData, function(indx, data) {
+            //I believe I want the description to be in it's own div in an html paragraph, this will be a child object.
+            var childDescript = $jConstruct('div', {
+                text: data.Description,
+            }).textProperties('paragraph').css({
+                'margin': '0 auto', //I want it to be centered in the parent div.
+            });
+    
+            //now I need to create the parent Div that will hold the 'Name.'
+            $jConstruct('div', {
+                class: 'defaultClass',
+                text: data.Name,
+            }).css({
+                'color': 'purple', //purple is such a nice color... don't you agree?
+                'text-align': 'center',
+                'border': '1px solid black',
+                'border-radius': '15px', //I want the border to look pretty!
+            }).addChild(childDescript).appendTo('body'); //add the child object and append it to the root div of the DOM.
         });
-
-        //now I need to create the parent Div that will hold the 'Name.'
-        $jConstruct('div', {
-            class: 'defaultClass',
-            text: data.Name,
-        }).css({
-            'color': 'purple', //purple is such a nice color... don't you agree?
-            'text-align': 'center',
-            'border': '1px solid black',
-            'border-radius': '15px', //I want the border to look pretty!
-        }).addChild(childDescript).appendTo('body'); //add the child object and append it to the root div of the DOM.
-    });
-});     
-</xmp>
+    });     
+    </xmp>
+</div>
 
 Now it may be possible to make strings that reflect HTML, and append on the strings, depending on the data coming in, but as you can see, if your entire web application is database driven, it would take an eternity to produce a good quality flexible user environment.
 <br></br>

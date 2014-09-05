@@ -12,7 +12,7 @@ var templates = {
     //Holds everything except the NAV... I think...
     docBody: $jConstruct('div', {
         id: 'docBody',
-        text: '<h5>Welcome to,</h5><h1>The jsonHTML Guide</h1>',
+        text: '<h5>Welcome to,</h5><h1 style="color: #CC6600">The jsonHTML Guide</h1>',
     }),
     
     navigation: function(tutorialBody) {
@@ -21,6 +21,10 @@ var templates = {
             project.getData(filePath)().done(function(data) {
                 tutorialBody.text = data;
                 tutorialBody.refresh();
+                function scrollToTop() {
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                }
+                setTimeout(scrollToTop, 300);
             });
         };
         
@@ -58,7 +62,7 @@ var templates = {
         //Main div for the Navigation menu.
         var navigation = $jConstruct('div', {
             id: 'nav',
-            text: '<h3>Navigation</h3>',
+            text: '<h3 style="color: #CC6600">Navigation</h3>',
         });
         
         //makes sure the nav keeps track of where it's at!
